@@ -23,9 +23,8 @@ class OpenCartRestClient{
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_URL => $this->apiUrl . http_build_query($query),
             CURLOPT_POSTFIELDS => http_build_query([
-                'username' => $this->apiUser,
-                'password' => $this->apiPass,
-                'key' => $this->apiPass
+                'api_user' => $this->apiUser,
+                'api_key' => $this->apiPass
             ])
         ];
         
@@ -33,6 +32,11 @@ class OpenCartRestClient{
         curl_setopt_array($ch, $array);
         $result = curl_exec($ch);
         curl_close($ch);
+        
+        if ($result == 'Unauthorised') {
+            throw new Exception('Unauthorised');    
+            return false;
+        }
         
         return json_decode($result, true);
         

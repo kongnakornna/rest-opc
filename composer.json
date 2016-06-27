@@ -12,8 +12,8 @@
     ],
     "require": {
         "php": ">= 5.4",
-        "filp/whoops": "^2.1",
-        "symfony/var-dumper": "^3.1"
+        "filp/whoops": "*",
+        "symfony/var-dumper": "*"
     },
     "require-dev": {},
     "autoload": {

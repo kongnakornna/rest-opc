@@ -1,0 +1,24 @@
+{
+    "name": "mcs/opencart-rest",
+    "description": "Library to interface with Amazon MWS",
+    "license": "MIT",
+    "keywords": ["amazon", "mws"],
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Michiel Meertens",
+            "email": "meertensmichiel28@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">= 5.4",
+        "filp/whoops": "^2.1",
+        "symfony/var-dumper": "^3.1"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "MCS\\": "src"
+        }
+    }
+}

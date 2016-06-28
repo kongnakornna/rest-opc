@@ -1,4 +1,5 @@
-<?php namespace MCS;
+<?php 
+namespace MCS;
 
 use Exception;
 
@@ -7,7 +8,6 @@ class OpenCartRestClient{
     private $apiUser;
     private $apiPass;
     private $apiUrl;
-    private $cookie = null;
     
     public function __construct($user, $pass, $url)
     {
@@ -44,21 +44,16 @@ class OpenCartRestClient{
     
     public function getorders()
     {
-
-        $query = [
+        return $this->request([
             'action' => 'orders'
-        ];
-        return $this->request($query);
+        ]);
     }
     
     public function getOrderItems($order_id)
     {
-
-        $query = [
+        return $this->request([
             'id' => $order_id,
             'action' => 'order_products'
-        ];
-        return $this->request($query);
+        ]);
     }
-   
 }
